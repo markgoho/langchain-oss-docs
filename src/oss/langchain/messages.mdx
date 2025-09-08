@@ -449,7 +449,8 @@ During streaming, you'll receive `AIMessageChunk` objects that can be combined:
 <CodeGroup>
     ```typescript Stream and collect chunks
     const chunks = [];
-    for await (const chunk of model.stream("Write a poem")) {
+    const stream = await model.stream("Write a poem");
+    for await (const chunk of stream) {
         chunks.push(chunk);
         console.log(chunk.text);
     }
