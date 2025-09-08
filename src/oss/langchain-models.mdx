@@ -42,7 +42,7 @@ The easiest way to get started with a model in LangChain is to use `initChatMode
 ```typescript Initialize a chat model
 import { initChatModel } from "langchain";
 
-const model = initChatModel("openai:gpt-5-nano");
+const model = await initChatModel("openai:gpt-5-nano");
 const response = await model.invoke("Why do parrots talk?");
 ```
 
