@@ -459,10 +459,11 @@ During streaming, you'll receive `AIMessageChunk` objects that can be combined:
     ```typescript Combine chunks
     import { AIMessageChunk } from "langchain";
 
-    const finalChunk = chunks.reduce(
-        (acc, chunk) => acc.concat(chunk.text),
-        new AIMessageChunk("") // Start with an empty chunk
-    );
+    let fullText = '';
+    for (const chunk of chunks) {
+        fullText += chunk.text;
+    }
+    const finalChunk = new AIMessageChunk(fullText);
     console.log(`Full response: ${finalChunk.text}`);
     ```
 </CodeGroup>
