@@ -332,8 +332,8 @@ const toolNode = new ToolNode({
     tools: [search, calculate],
     handleToolErrors: (error, toolCall) => {
         return new ToolMessage(
-        content="Please check your input and try again.",
-        tool_call_id=toolCall.id
+            content: "Please check your input and try again.",
+            tool_call_id: toolCall.id
         );
     }
 });
