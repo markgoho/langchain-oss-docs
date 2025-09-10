@@ -461,7 +461,7 @@ During streaming, you'll receive `AIMessageChunk` objects that can be combined:
 
     let finalChunk: AIMessageChunk | undefined;
     for (const chunk of chunks) {
-    finalChunk = finalChunk ? finalChunk.concat(chunk) : chunk;
+        finalChunk = finalChunk ? finalChunk.concat(chunk) : chunk;
     }
 
     console.log(`Full response: ${finalChunk?.text}`);
