@@ -328,8 +328,7 @@ If an error occurs within `ToolNode`, the agent will return a `ToolMessage` to t
 ```ts wrap
 import { ToolNode, ToolMessage } from "langchain";
 
-const toolNode = new ToolNode({
-    tools: [search, calculate],
+const toolNode = new ToolNode([search, calculate], {
     handleToolErrors: (error, toolCall) => {
         return new ToolMessage({
             content: "Please check your input and try again.",
